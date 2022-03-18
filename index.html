@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-control" content="public">
+    <title>Dsdle</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="loader.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/icons/506448459008573441/717471f2e977cf743ab16ec9c5268076">
+</head>
+<header>
+    <ul>
+        <li><a href="#" onclick="popupToggle(); dimmerToggle();"><ion-icon name="help-circle-outline"></ion-icon></a></li>
+        <li><a href="#" onclick="resultsToggle(); dimmerToggle();"><ion-icon name="stats-chart-outline"></ion-icon></a></li>
+    </ul>
+</header>
+    <body>
+        <div id="dimmer"></div>
+        <div class="game-container">
+            <div class="title-container">
+                <h1>Dsdle</h1>
+            </div>
+            <div class="message-container"></div>
+            <div class="tile-container"></div>
+            <div class="key-container"></div>
+        </div>
+        <div id="stats">
+            <div class="results">
+                <h2>STATS</h2>
+                <p>Total games: <span id="total-played"></span><br>
+                Wins: <span id="total-wins"></span><br>
+                Win rate: <span id="win-percent"></span>% <br>
+                Current streak: <span id="current-streak"></span> <br>
+                </p>
+                <h3>NEXT WORD IN</h3>
+                <span id="timer"></span>
+            </div>
+            <img class="dream" src="https://media.discordapp.net/attachments/751799389550280858/954023471522926712/E9KOtCYVkAQKjGl.jpg">
+            <a class="closer"><ion-icon name="close-outline" onclick="resultsToggle(); dimmerToggle();"></ion-icon></a>
+        </div>
+        <div id="popup">
+            <div class="content">
+                <h2>RULER</h2>
+                <p>yes. look and get lured. come to my server. anti depression<br>
+                    YOU is invited THE JOIN:<br>
+                    ｄｏｗｎ ｓｙｎｄｒｏｍｅ<br>
+                    
+                    WE HAVE:<br>
+                    1. E-MAIL DEFAULT NOUN:- نｇ ｔｖｒｑｓｕｖｓｓｎｩｐｑｘ｜<br>
+                    2. horn ypeople <br>
+                    3. The Philippines :war:<br>
+                    4. anti depresson alway ready at service<br>
+                    5. SEX ROBOTs , you can freely abuse<br>
+                    6. completly FREE brain cell removal, no other server gives you such free awesome service So now is You'r time<br>
+                    7 . KKKKKKKKKKKKKKKK GGGGGGGGGGGĢGGG<br>
+                    8. monthly giveaway (real)<br>
+                    
+                    <a href="https://discord.gg/Qxq9533" target="_blank">https://discord.gg/Qxq9533</a> < SHE( INSIDE YOU NEXT KAKAKAKAA YOUR<br>
+                    <br>
+                </p>
+            </div>
+            <a class="close"><ion-icon name="close-outline" onclick="popupToggle(); dimmerToggle();"></ion-icon></a>
+            <div class="p2">
+                <p>How to dsle:<br>
+                    Step 1. Be gay<br>
+                    Step 2. Kill you<br>
+                You will do this (you will see kaeli cinematic)</p>
+            </div>
+            <div class="example1">
+                <div id="example1-tile0" class="extile green-overlay">K</div>
+                <div id="example1-tile1" class="extile" >A</div>
+                <div id="example1-tile2" class="extile">E</div>
+                <div id="example1-tile3" class="extile yellow-overlay">L</div>
+                <div id="example1-tile4" class="extile">I</div>
+            </div>
+            <div class="info">
+                <p>Made by @masaru9002 | autistic parody of wordle <br>Daily dsle!!!</p>
+            </div>
+        </div>
+        <div class="loader">
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+            </svg>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script>
+            function timeOut()
+            {
+                setTimeout(function(){
+                $(".loader").fadeOut("slow");
+            }, 1000);
+            }
+            $(window).on("load", timeOut)
+
+        </script>
+        <script>
+        function popupToggle()
+        {
+            const popup = document.getElementById('popup');
+            popup.classList.toggle('active')
+        }
+        function resultsToggle()
+        {
+            updateStats()
+            const popup = document.getElementById('stats');
+            popup.classList.toggle('active')
+        }
+        function dimmerToggle()
+            {
+                const popup = document.getElementById('dimmer');
+                popup.classList.toggle('active')
+            }
+            
+        </script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>
