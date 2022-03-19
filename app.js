@@ -20,6 +20,12 @@ setTimeout(function(){
 document.addEventListener("DOMContentLoaded", () => {
     initLocalStorage();
     loadLocalStorage();
+    if(isGameOver==1) {
+        setTimeout(function() {
+        resultsToggle()
+        dimmerToggle()
+    }, 1500)
+    }
 })
 
 function msToTime(duration) {
