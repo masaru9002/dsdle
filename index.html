@@ -6,6 +6,11 @@
     <meta http-equiv="Cache-control" content="public">
     <title>Dsdle</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            alert("You are not using a PC, which could make the game look weird and unplayable. Please view the page in Desktop site before playing!");
+    }
+    </script>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="loader.css">
     <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/icons/506448459008573441/717471f2e977cf743ab16ec9c5268076">
