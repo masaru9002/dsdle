@@ -4,7 +4,7 @@ const messageDisplay = document.querySelector('.message-container')
 
 var x = setInterval(function() {
     var now = new Date();
-    var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 2, 28, 0, 0) - now;
+    var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 0, 0, 0) - now;
     if (millisTill10 < 0) {
         //millisTill10 += 86400000;
         millisTill10 += 43200000; 
