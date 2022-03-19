@@ -10,22 +10,41 @@ var x = setInterval(function() {
         millisTill10 += 43200000; 
     }
 
+document.onkeydown = function(e) {
+    if(event.keyCode == 123) {
+    return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+    return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+    return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
+        return false;
+        }
+    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+    return false;
+    }
+    }
+    
 document.getElementById("timer").innerHTML = msToTime(millisTill10)
-setTimeout(function(){
-    resetGameState()
-    updateWordIndex()
-}, millisTill10);
-})
 
 document.addEventListener("DOMContentLoaded", () => {
-    initLocalStorage();
-    loadLocalStorage();
     if(isGameOver==1) {
         setTimeout(function() {
         resultsToggle()
         dimmerToggle()
     }, 1500)
     }
+    initLocalStorage();
+    loadLocalStorage();
+    setTimeout(function(){
+        resetGameState()
+        updateWordIndex()
+    }, millisTill10);
+    })
+    
 })
 
 function msToTime(duration) {
@@ -78,16 +97,11 @@ function loadLocalStorage() {
     }
     const storedKeyboardContainer = window.localStorage.getItem("keyboardContainer")
     if (storedKeyboardContainer) {
-    const keyrefresh = document.querySelector(".key-container")
-    keyrefresh.innerHTML = '';
-    keys.forEach(key => {
-    const buttonElement = document.createElement('button')
-    buttonElement.textContent = key
-    buttonElement.setAttribute('id', key)
-    buttonElement.addEventListener('click', () => handleClick(key))
-    keyboard.append(buttonElement)
     document.querySelector(".key-container").innerHTML = storedKeyboardContainer
-})
+    keys.forEach(key => {
+        const buttonElement = document.getElementById(key)
+        buttonElement.addEventListener('click', () => handleClick(key))
+    })
     }
     if (isGameOver==1) {
         document.removeEventListener("keydown", handleKeyPress)
@@ -98,24 +112,6 @@ function loadLocalStorage() {
 function updateWordIndex() {
     window.localStorage.setItem('currentWordIndex', Math.floor(Math.random()*words.length));
 }
-
-document.onkeydown = function(e) {
-    if(event.keyCode == 123) {
-    return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-    return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-    return false;
-    }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
-        return false;
-        }
-    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-    return false;
-    }
-    }
 
 function resetGameState() {
         window.localStorage.removeItem("currentWordIndex")
@@ -242,15 +238,16 @@ const deleteLetter = () => {
 function handleKeyPress(e) {
     if (e.key == "Backspace") {
         deleteLetter()
-        return }
+        return } else
 
     if (e.key == "Enter") {
         if (currentTile > 4) {
             checkRow()
-            return } else {
+            return
+            } else {
             showMessage('thats not 5 letters 😡😡')
                 return }
-    }
+    } else
     if (e.key.match(/^[a-z]$/)) {
         addLetter(e.key.toUpperCase())
         return
@@ -285,6 +282,10 @@ const checkRow = () => {
                 showMessage('lol skill issue (the word is ' + wordle + ')')
                 gameLost()
                 updateTotalGames()
+                setTimeout(function(){
+                    resultsToggle()
+                    dimmerToggle()
+                }, 2000);
                 document.removeEventListener("keydown", handleKeyPress)
                 return 
             }
