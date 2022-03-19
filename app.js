@@ -4,22 +4,22 @@ const messageDisplay = document.querySelector('.message-container')
 
 var x = setInterval(function() {
     var now = new Date();
-    var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0) - now;
+    var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0, 0) - now;
     if (millisTill10 < 0) {
         //millisTill10 += 86400000;
-        millisTill10 += 86400000; 
+        millisTill10 += 43200000; 
     }
-    
+
+document.getElementById("timer").innerHTML = msToTime(millisTill10)
+setTimeout(function(){
+    resetGameState()
+    updateWordIndex()
+}, millisTill10);
+})
+
 document.addEventListener("DOMContentLoaded", () => {
     initLocalStorage();
     loadLocalStorage();
-    setTimeout(function(){
-        resetGameState()
-        updateWordIndex()
-    }, millisTill10);
-})
-
-document.getElementById("timer").innerHTML = msToTime(millisTill10)
 })
 
 function msToTime(duration) {
@@ -46,7 +46,7 @@ const words = [
     "VIRUS", "TWINS", "OBAKE", "MIMIC", "PIANO", "DEMON", "ENDER", "AYAKA", "JUNKO", "UNCHI", "UPTOU", "DREAM", "AJFJS",
     "NIGGA", "JOOBY", "SHAPE", "ZEDGE", "AIISH", "QUANG"
   ]
-let wordle = words[currentWordIndex]
+let wordle = Math.floor(Math.random()*words.length)
 
 document.addEventListener("keydown", handleKeyPress)
 
