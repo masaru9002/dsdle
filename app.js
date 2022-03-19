@@ -34,7 +34,7 @@ function msToTime(duration) {
     return hours + ":" + minutes + ":" + seconds;
   }
 
-let currentWordIndex = 0
+ 
 const words = [
     "KAELI", "GTRAP", "MONTY", "VOLTA", "RENUU", "REKKU", "SERPY", "TSPIN", "VINCE", "DRAGO", "MONTY", "CROSS", "SNIFF",
     "CUNNY", "WANGY", "PUSSY", "BOOBS", "VENTI", "ASIAN", "CHINA", "DSDLE", "DAWWW", "GATOR", "PNIXZ", "SONGS", "HONEY",
@@ -46,7 +46,8 @@ const words = [
     "VIRUS", "TWINS", "OBAKE", "MIMIC", "PIANO", "DEMON", "ENDER", "AYAKA", "JUNKO", "UNCHI", "UPTOU", "DREAM", "AJFJS",
     "NIGGA", "JOOBY", "SHAPE", "ZEDGE", "AIISH", "QUANG"
   ]
-let wordle = Math.floor(Math.random()*words.length)
+let currentWordIndex = Math.floor(Math.random()*words.length)
+let wordle = words[currentWordIndex]
 
 document.addEventListener("keydown", handleKeyPress)
 
