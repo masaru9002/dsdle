@@ -78,7 +78,6 @@ function loadLocalStorage() {
     }
     const storedKeyboardContainer = window.localStorage.getItem("keyboardContainer")
     if (storedKeyboardContainer) {
-    document.querySelector(".key-container").innerHTML = storedKeyboardContainer
     const keyrefresh = document.querySelector(".key-container")
     keyrefresh.innerHTML = '';
     keys.forEach(key => {
@@ -87,6 +86,7 @@ function loadLocalStorage() {
     buttonElement.setAttribute('id', key)
     buttonElement.addEventListener('click', () => handleClick(key))
     keyboard.append(buttonElement)
+    document.querySelector(".key-container").innerHTML = storedKeyboardContainer
 })
     }
     if (isGameOver==1) {
