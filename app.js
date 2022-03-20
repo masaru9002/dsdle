@@ -2,13 +2,6 @@ const tileDisplay = document.querySelector('.tile-container')
 const keyboard = document.querySelector('.key-container')
 const messageDisplay = document.querySelector('.message-container')
 
-var x = setInterval(function() {
-    var now = new Date();
-    var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 10, 0, 0, 0) - now;
-    if (millisTill10 < 0) {
-        //millisTill10 += 86400000;
-        millisTill10 += 43200000; 
-    }
 
 document.onkeydown = function(e) {
     if(event.keyCode == 123) {
@@ -27,25 +20,32 @@ document.onkeydown = function(e) {
     return false;
     }
     }
-    
-document.getElementById("timer").innerHTML = msToTime(millisTill10)
 
-document.addEventListener("DOMContentLoaded", () => {
-    if(isGameOver==1) {
-        setTimeout(function() {
-        resultsToggle()
-        dimmerToggle()
-    }, 1500)
+var x = setInterval(function() {
+    var now = new Date();
+    let millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0, 0) - now;
+    if (millisTill10 < 0) {
+        //millisTill10 += 86400000;
+        millisTill10 += 43200000; 
     }
-    initLocalStorage();
-    loadLocalStorage();
-    setTimeout(function(){
+//document.getElementById("timer").innerHTML = msToTime(millisTill10)
+})
+
+var now = new Date();
+    let millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0, 0) - now;
+    if (millisTill10 < 0) {
+        //millisTill10 += 86400000;
+        millisTill10 += 43200000; 
+    }
+/*window.onload = setTimeout(function(){
         resetGameState()
         updateWordIndex()
-    }, millisTill10);
+    }, millisTill10);*/
+
+document.addEventListener("DOMContentLoaded", () => {
+    initLocalStorage();
+    loadLocalStorage();
     })
-    
-})
 
 function msToTime(duration) {
     var seconds = Math.floor((duration / 1000) % 60),
@@ -59,7 +59,16 @@ function msToTime(duration) {
     return hours + ":" + minutes + ":" + seconds;
   }
 
- 
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if(isGameOver==1) {
+        setTimeout(function() {
+        resultsToggle()
+        dimmerToggle()
+    }, 1500)
+    }
+})
+  
 const words = [
     "KAELI", "GTRAP", "MONTY", "VOLTA", "RENUU", "REKKU", "SERPY", "TSPIN", "VINCE", "DRAGO", "MONTY", "CROSS", "SNIFF",
     "CUNNY", "WANGY", "PUSSY", "BOOBS", "VENTI", "ASIAN", "CHINA", "DSDLE", "DAWWW", "GATOR", "PNIXZ", "SONGS", "HONEY",
@@ -274,7 +283,9 @@ const checkRow = () => {
             setTimeout(function(){
                 resultsToggle()
                 dimmerToggle()
-            }, 2000);
+                resetGameState()
+                updateWordIndex()
+            }, 2300);
             return
         } else {
             if (currentRow >= 5) {
@@ -285,7 +296,9 @@ const checkRow = () => {
                 setTimeout(function(){
                     resultsToggle()
                     dimmerToggle()
-                }, 2000);
+                    resetGameState()
+                    updateWordIndex()
+                }, 2300);
                 document.removeEventListener("keydown", handleKeyPress)
                 return 
             }
