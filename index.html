@@ -6,11 +6,6 @@
     <meta http-equiv="Cache-control" content="public">
     <title>Dsdle</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            alert("You are not using a PC, which could make the game look weird and unplayable. Please view the page in Desktop site before playing!");
-    }
-    </script>
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="loader.css">
     <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/icons/506448459008573441/717471f2e977cf743ab16ec9c5268076">
@@ -39,7 +34,8 @@
                 Win rate: <span id="win-percent"></span>% <br>
                 Current streak: <span id="current-streak"></span> <br>
                 </p>
-                <h3>NEXT WORD IN</h3>
+                <h2>AASHIQUI</h2>
+                <a class="share">0.062 seconds</a>
                 <span id="timer"></span>
             </div>
             <img class="dream" src="https://media.discordapp.net/attachments/751799389550280858/954023471522926712/E9KOtCYVkAQKjGl.jpg">
@@ -92,6 +88,7 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script>
+            
             function timeOut()
             {
                 setTimeout(function(){
@@ -121,5 +118,10 @@
             
         </script>
         <script type="text/javascript" src="app.js"></script>
+        <script>
+            if(( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )) {
+                alert("You are not using a PC, which could make the game look weird and unplayable. Make sure you view the page in Desktop site before playing!");
+        }
+        </script>
     </body>
 </html>
