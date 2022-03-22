@@ -78,7 +78,7 @@ const words = [
     "GANYU", "EAGLE", "FLUSH", "ALLIN", "IMAGE", "VIDEO", "UOHHH", "TWICE", "JIMIN", "CATCH", "VANNY", "AFTON", "ALLAH",
     "DEATH", "MOMMY", "DADDY", "REMIX", "NIVEA", "CIRNO", "CAKKE", "SCARY", "TRAZE", "MIKEL", "BULGE", "AHHHH", "POLLO",
     "VIRUS", "TWINS", "OBAKE", "MIMIC", "PIANO", "DEMON", "ENDER", "AYAKA", "JUNKO", "UNCHI", "UPTOU", "DREAM", "AJFJS",
-    "NIGGA", "JOOBY", "SHAPE", "ZEDGE", "AIISH", "QUANG"
+    "NIGGA", "JOOBY", "SHAPE", "ZEDGE", "AIISH", "QUANG", "PENIS", "DUUHH", "PINTO", "EAGLE", "ANGIE", "TRANS"
   ]
 let currentWordIndex = Math.floor(Math.random()*words.length)
 let wordle = words[currentWordIndex]
