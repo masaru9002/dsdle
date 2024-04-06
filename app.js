@@ -79,6 +79,7 @@ const words = [
     "DEATH", "MOMMY", "DADDY", "REMIX", "NIVEA", "CIRNO", "CAKKE", "SCARY", "TRAZE", "MIKEL", "BULGE", "AHHHH", "POLLO",
     "VIRUS", "TWINS", "OBAKE", "MIMIC", "PIANO", "DEMON", "ENDER", "AYAKA", "JUNKO", "UNCHI", "UPTOU", "DREAM", "AJFJS",
     "NIGGA", "JOOBY", "SHAPE", "ZEDGE", "AIISH", "QUANG", "PENIS", "DUUHH", "PINTO", "EAGLE", "ANGIE", "TRANS", "NITRO",
+    "STEVE",
   ]
 let currentWordIndex = Math.floor(Math.random()*words.length)
 let wordle = words[currentWordIndex]
